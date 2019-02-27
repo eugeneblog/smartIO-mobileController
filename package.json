@@ -1,0 +1,25 @@
+{
+  "name": "smartio-mobilecontroller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugeneblog/smartIO-mobileController.git"
+  },
+  "author": "eugene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eugeneblog/smartIO-mobileController/issues"
+  },
+  "homepage": "https://github.com/eugeneblog/smartIO-mobileController#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jquery-mobile": "^1.5.0-alpha.1",
+    "webpack": "^4.29.5",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
