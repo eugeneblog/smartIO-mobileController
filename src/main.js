@@ -11,5 +11,5 @@ window.$ = $
 new Vue({ // Vue运行时，不包含编译器，相比体积小百分之30
     el: '#app',
     router,
-    render: h => App(h)
+    render: h => h(App)
 })

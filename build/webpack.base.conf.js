@@ -3,6 +3,10 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('../config')
 
+function resolve(dir) {
+    return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
     context: path.resolve(__dirname, '../'), // 上下文是入口文件所处的目录的绝对路径的字符串。
     entry:{
@@ -13,14 +17,27 @@ module.exports = {
         filename:'[name].js',  //用于输出的文件名
         publicPath: config.dev.assetsPublicPath // 此输出目录对应的公开 URL
     },
+    resolve: {
+        alias: {
+            '@': resolve('src'),
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    },
     module:{
         rules:[{
             test: /\.js?$/,
-            exclude:/(node_modules)/,
-            loader:'babel-loader'
-        },{
+            exclude: /(node_modules)/,
+            loader: 'babel-loader',
+            include: [
+                resolve('src')
+            ]
+        }, {
             test:/\.css$/,
             use:['style-loader', 'css-loader']
+        }, {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            exclude: [resolve('src/icons')]
         }]
     },
     plugins:[

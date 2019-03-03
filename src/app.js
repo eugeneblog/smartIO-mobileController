@@ -1,9 +1,10 @@
-export default function App(h) {
-    return h('div', {
-        attrs: {
-            id: 'app'
-        }
-    }, [
-        h('router-view')
-    ])
+export default {
+    name: 'App',
+    render(h) {
+        return (
+            <div id='app'>
+                <router-view></router-view>
+            </div>
+        )
+    }
 }
